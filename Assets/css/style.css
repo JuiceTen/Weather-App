@@ -1,0 +1,71 @@
+:root {
+    --background-head: rgb(52, 71, 97);
+    --text-white: white;
+}
+
+body {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+}
+main {
+    position: relative;
+    bottom: 70px;
+    width: 68%;
+    float: left;
+}
+header h1{
+    font-size: 64px;
+    text-align: center;
+    background-color: var(--background-head);
+    color: var(--text-white);
+}
+
+aside {
+    float: left;
+    width: 30%;
+    height: 100vh;
+}
+
+.flex{
+    margin-top: 50px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main-disp {
+    padding: 6px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+section div span {
+    padding: 5px
+}
+
+#cityName {
+    width: 30%;
+}
+
+#uvIndex {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.card {
+    width: 18%;
+}
+
+@media screen and (max-width: 950px) {
+    .flex{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .card {
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+}
