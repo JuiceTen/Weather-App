@@ -23,7 +23,7 @@ function renderText() {
     if (localStorage.getItem('search') != null) {
         var storageData = JSON.parse(localStorage.getItem('search'))
 
-        fetch("http://api.openweathermap.org/data/2.5/forecast?q="+ storageData[storageData.length-1] +"&units=imperial&appid=fdb0a3a60be763cc57b205caf5a7d419")
+        fetch("https://api.openweathermap.org/data/2.5/forecast?q="+ storageData[storageData.length-1] +"&units=imperial&appid=fdb0a3a60be763cc57b205caf5a7d419")
             .then(function(response) {
                 console.log(response.status)
                 if (response.status === 404) {
@@ -57,7 +57,7 @@ function renderText() {
                 }
                 var long = data.city.coord.lon
                 var lat = data.city.coord.lat
-                return fetch('http://api.openweathermap.org/data/2.5/uvi?lat='+ lat +'&lon='+ long +'&appid=fdb0a3a60be763cc57b205caf5a7d419')
+                return fetch('https://api.openweathermap.org/data/2.5/uvi?lat='+ lat +'&lon='+ long +'&appid=fdb0a3a60be763cc57b205caf5a7d419')
                     .then(function(response){
                         return response.json()
                     })
@@ -113,7 +113,7 @@ searchHist.on('click','li', function(e) {
     e.preventDefault()
     var onClick = e.target.textContent
     console.log(onClick)
-    var cityAPI = "http://api.openweathermap.org/data/2.5/forecast?q="+ onClick +"&units=imperial&appid=fdb0a3a60be763cc57b205caf5a7d419"
+    var cityAPI = "https://api.openweathermap.org/data/2.5/forecast?q="+ onClick +"&units=imperial&appid=fdb0a3a60be763cc57b205caf5a7d419"
 
     fetch(cityAPI)
     .then(function(response) {
@@ -183,7 +183,7 @@ function search() {
     if (!userInput) {
         return alert("please input valid city")
     }
-    var cityAPI = "http://api.openweathermap.org/data/2.5/forecast?q="+ userInput +"&units=imperial&appid=fdb0a3a60be763cc57b205caf5a7d419"
+    var cityAPI = "https://api.openweathermap.org/data/2.5/forecast?q="+ userInput +"&units=imperial&appid=fdb0a3a60be763cc57b205caf5a7d419"
 
     console.log(cityAPI)
     fetch(cityAPI)
