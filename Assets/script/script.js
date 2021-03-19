@@ -103,8 +103,10 @@ function searchHistory() {
 
 function displayHistory(){
    var update =  JSON.parse(localStorage.getItem('search'))
-   for (i=0; i< update.length; i++) {
-    $(searchHist).append('<li class="list-group-item history">' + update[i] + '</li>')
+   if (update) {
+       for (i=0; i< update.length; i++) {
+        $(searchHist).append('<li class="list-group-item history">' + update[i] + '</li>')
+       }
    }
 }
 searchHist.on('click','li', function(e) {
@@ -261,6 +263,7 @@ function updateHistory() {
 function clearHistory() {
     localStorage.clear()
 }
+
 displayHistory();
 
 renderText()
