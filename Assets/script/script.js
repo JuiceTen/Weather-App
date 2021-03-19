@@ -152,7 +152,7 @@ searchHist.on('click','li', function(e) {
         } 
         var long = data.city.coord.lon
         var lat = data.city.coord.lat
-        return fetch('http://api.openweathermap.org/data/2.5/uvi?lat='+ lat +'&lon='+ long +'&appid=fdb0a3a60be763cc57b205caf5a7d419')
+        return fetch('https://api.openweathermap.org/data/2.5/uvi?lat='+ lat +'&lon='+ long +'&appid=fdb0a3a60be763cc57b205caf5a7d419')
             .then(function(response){
                 return response.json()
             })
